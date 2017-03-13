@@ -11,10 +11,11 @@ Author URI: http://octopusoddments.com
 
 // Add all files in lib folder into array
 $include = [
-  '/lib/add-acf.php',           // Register Views
+  '/lib/add-acf.php',           // Add Advanced Custom Fields
   '/lib/cpt.php',               // Register Post Type
-  '/lib/acf.php',               // Register Fields
+  '/lib/acf.php',               // Register Fields JSON
   '/lib/templates.php',         // Register Views
+  '/lib/sponsors-widget.php',   // Register Widget
 ];
 
 // Require Once each file in the array

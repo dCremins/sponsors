@@ -34,5 +34,24 @@
 }
 
 .contributor .level {
-  padding-left: 130px;
+  padding: 0 30px 0 130px;
+}
+
+.carousel .carousel-inner {
+  margin: auto;
+  min-height: 400px;
+  width: 80%;
+}
+
+.carousel .carousel-control-next,
+.carousel .carousel-control-prev {
+  width: 10%;
+}
+
+.sponsor-widget .contributor-level .widget-icon {
+  left: 6px;
+}
+
+.sponsor-widget .contributor-level .fa.contributor-title-circle {
+  left: -16px;
 }
