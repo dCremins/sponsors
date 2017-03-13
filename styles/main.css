@@ -5,3 +5,34 @@
 .sponsor-logo img {
   width: 100%;
 }
+
+.contributor-level {
+  display: flex;
+  margin: 30px 0;
+}
+
+.contributor-level .fa-stack {
+  flex: 1;
+}
+
+.contributor-level h2 {
+  align-self: center;
+  flex: 10;
+  margin-bottom: 0;
+  padding: 10px 55px;
+}
+
+.fa.contributor-title-circle {
+  font-size: 3em;
+  left: 0;
+  position: absolute;
+  top: -24px;
+}
+
+.contributor {
+  margin-bottom: 60px;
+}
+
+.contributor .level {
+  padding-left: 130px;
+}
