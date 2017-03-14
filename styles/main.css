@@ -37,21 +37,30 @@
   padding: 0 30px 0 130px;
 }
 
+.sponsor-level-icon,
+.sponsor-level-icon.fa {
+  font-size: 50px;
+}
+
 .carousel .carousel-inner {
   margin: auto;
   min-height: 400px;
-  width: 80%;
+  width: 90%;
 }
 
 .carousel .carousel-control-next,
 .carousel .carousel-control-prev {
-  width: 10%;
+  width: 5%;
 }
 
 .sponsor-widget .contributor-level .widget-icon {
-  left: 6px;
+  left: 1px;
 }
 
 .sponsor-widget .contributor-level .fa.contributor-title-circle {
   left: -16px;
+}
+
+.sponsor-widget .row.level {
+  margin-bottom: 30px;
 }

@@ -169,7 +169,7 @@ class SponsorWidget extends \WP_Widget
                   <span class="fa-stack fa-3x">
                   <i class="fa fa-circle fa-inverse contributor-title-circle"></i>
                   <i class="brand color fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-certificate fa-stack-1x fa-inverse widget-icon"></i>
+                  <span class="sponsor-level-icon dashicons dashicons-awards fa-stack-1x fa-inverse"></span>
                   </span>
                   <h2 class="accent background inverse">' . $level . '</h2>
                   </header>';
@@ -200,12 +200,12 @@ class SponsorWidget extends \WP_Widget
         }
         echo '</div>';
         echo '
-        <a class="brand background carousel-control-prev" href="#SponsorLevelIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <a class="carousel-control-prev" href="#SponsorLevelIndicators" role="button" data-slide="prev">
+          <i class="sponsor-level-icon brand color fa fa-angle-left" aria-hidden="true"></i>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="brand background carousel-control-next" href="#SponsorLevelIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <a class="carousel-control-next" href="#SponsorLevelIndicators" role="button" data-slide="next">
+          <i class="sponsor-level-icon brand color fa fa-angle-right" aria-hidden="true"></i>
           <span class="sr-only">Next</span>
         </a>';
         echo '</div>';
