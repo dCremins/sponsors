@@ -13,6 +13,8 @@
 
 .sponsor-widget {
   .contributor-level {
+    margin-top: 0;
+
     .widget-icon {
       left: 1px;
     }
@@ -24,5 +26,36 @@
 
   .row.level {
     margin-bottom: 30px;
+  }
+}
+
+.SponsorWidget {
+  h4 {
+    margin-bottom: 10px;
+  }
+
+  .carousel {
+    border:2px solid #eee;
+    padding: 30px 15px;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    opacity: 1;
+
+    .sponsor-level-icon.fa {
+      font-size: 25px;
+    }
+
+    &:hover .sponsor-level-icon.fa {
+      font-size: 50px;
+    }
+  }
+
+  .carousel-indicators li {
+    border-radius: 10px;
+    flex: none;
+    height: 15px;
+    width: 15px;
   }
 }

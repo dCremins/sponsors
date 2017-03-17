@@ -1,5 +1,6 @@
 .sponsor-logo {
   max-width: 300px;
+  min-width: 100px;
 }
 
 .sponsor-logo img {
@@ -9,10 +10,6 @@
 .contributor-level {
   display: flex;
   margin: 30px 0;
-}
-
-.contributor-level .fa-stack {
-  flex: 1;
 }
 
 .contributor-level h2 {
@@ -34,6 +31,7 @@
 }
 
 .contributor .level {
+  flex-flow: row wrap;
   padding: 0 30px 0 130px;
 }
 
@@ -53,6 +51,10 @@
   width: 5%;
 }
 
+.sponsor-widget .contributor-level {
+  margin-top: 0;
+}
+
 .sponsor-widget .contributor-level .widget-icon {
   left: 1px;
 }
@@ -63,4 +65,35 @@
 
 .sponsor-widget .row.level {
   margin-bottom: 30px;
+}
+
+.SponsorWidget h4 {
+  margin-bottom: 10px;
+}
+
+.SponsorWidget .carousel {
+  border: 2px solid #eee;
+  padding: 30px 15px;
+}
+
+.SponsorWidget .carousel-control-next,
+.SponsorWidget .carousel-control-prev {
+  opacity: 1;
+}
+
+.SponsorWidget .carousel-control-next .sponsor-level-icon.fa,
+.SponsorWidget .carousel-control-prev .sponsor-level-icon.fa {
+  font-size: 25px;
+}
+
+.SponsorWidget .carousel-control-next:hover .sponsor-level-icon.fa,
+.SponsorWidget .carousel-control-prev:hover .sponsor-level-icon.fa {
+  font-size: 50px;
+}
+
+.SponsorWidget .carousel-indicators li {
+  border-radius: 10px;
+  flex: none;
+  height: 15px;
+  width: 15px;
 }

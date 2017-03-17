@@ -1,5 +1,6 @@
 .sponsor-logo {
   max-width: 300px;
+  min-width: 100px;
 
   img {
     width: 100%;
@@ -9,10 +10,6 @@
 .contributor-level {
   display: flex;
   margin: 30px 0;
-
-  .fa-stack {
-    flex: 1;
-  }
 
   h2 {
     align-self: center;
@@ -35,6 +32,7 @@
   margin-bottom: 60px;
 
   .level {
+    flex-flow: row wrap;
     padding: 0 30px 0 130px;
   }
 }

@@ -30,4 +30,5 @@ unset($file, $filepath);
 /* Add main.css */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sponsors_css', plugins_url('/styles/main.css', __FILE__));
+    wp_register_script('custom-carousel', plugins_url('/js/custom-carousel.js', __FILE__));
 });
