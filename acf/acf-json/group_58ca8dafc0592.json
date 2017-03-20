@@ -1,0 +1,75 @@
+{
+    "key": "group_58ca8dafc0592",
+    "title": "Brand and Colors",
+    "fields": [
+        {
+            "key": "field_58ca8dbaeca11",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "Appears in the primary menu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_58ca8deeeca12",
+            "label": "Color Scheme",
+            "name": "color_scheme",
+            "type": "radio",
+            "instructions": "Select the primary color for the site",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Green": "Green",
+                "Blue": "Blue",
+                "Red": "Red",
+                "Purple": "Purple",
+                "Orange": "Orange"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-options"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1489669721
+}

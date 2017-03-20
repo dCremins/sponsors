@@ -1,0 +1,40 @@
+{
+    "key": "group_58b9dca12bf38",
+    "title": "About",
+    "fields": [
+        {
+            "key": "field_58b9dca4290e1",
+            "label": "video",
+            "name": "video",
+            "type": "oembed",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "about-video",
+                "id": ""
+            },
+            "width": 500,
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "237"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1489697447
+}

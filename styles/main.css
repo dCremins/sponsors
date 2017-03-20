@@ -37,7 +37,26 @@
 
 .sponsor-level-icon,
 .sponsor-level-icon.fa {
-  font-size: 50px;
+  font-size: 70px;
+}
+
+@media (max-width: 991px) {
+  .contributor .level {
+    display: flex;
+    padding: 0 30px;
+  }
+  .contributor .level .col {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .contributor .level {
+    display: block;
+  }
+  .contributor .level .col {
+    width: 100%;
+  }
 }
 
 .carousel .carousel-inner {
@@ -96,4 +115,11 @@
   flex: none;
   height: 15px;
   width: 15px;
+}
+
+@media (max-width: 767px) {
+  .SponsorWidget .contributor .col {
+    margin: 0 auto;
+    max-width: 330px;
+  }
 }

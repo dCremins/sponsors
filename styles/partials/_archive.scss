@@ -39,5 +39,26 @@
 
 .sponsor-level-icon,
 .sponsor-level-icon.fa  {
-  font-size: 50px;
+  font-size: 70px;
+}
+
+@media (max-width: 991px) {
+  .contributor .level {
+    display: flex;
+    padding: 0 30px;
+
+    .col {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .contributor .level {
+    display: block;
+
+    .col {
+      width: 100%;
+    }
+  }
 }

@@ -59,3 +59,12 @@
     width: 15px;
   }
 }
+
+@media (max-width: 767px) {
+  .SponsorWidget .contributor {
+    .col {
+      margin: 0 auto;
+      max-width: 330px;
+    }
+  }
+}

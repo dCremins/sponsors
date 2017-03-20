@@ -1,0 +1,41 @@
+{
+    "key": "group_58ca8ebd800fe",
+    "title": "wqer",
+    "fields": [
+        {
+            "key": "field_58ca8f9018fc7",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h2>The following are options to change the appearance of your site and override any equivalent setting in the Wordpress customizer. Options left blank will default back to your Wordpress site settings or remain blank if there is no setting.<\/h2>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1489670286
+}
