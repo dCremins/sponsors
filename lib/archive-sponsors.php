@@ -40,7 +40,7 @@ foreach ($sponsors as $level => $single) {
           <span class="fa-stack fa-3x">
           <i class="fa fa-circle fa-inverse contributor-title-circle"></i>
           <i class="accent color fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-certificate fa-stack-1x fa-inverse"></i>
+          <span class="dashicons dashicons-awards sponsor-level-icon fa-stack-1x fa-inverse"></span>
           </span>
           <h2 class="brand background inverse">' . $level . '</h2>
           </header>';

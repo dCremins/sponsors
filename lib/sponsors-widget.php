@@ -52,10 +52,16 @@ class SponsorWidget extends \WP_Widget
 // before and after widget arguments are defined by themes
         echo $args['before_widget'];
         if (!empty($title)) {
+            if (!empty($link)) {
+                echo '<a href="' . $link . '">';
+            }
             if (is_front_page()) {
                 echo '<h4 class="homepage">' . $title . '</h4>';
             } else {
                 echo '<h5>' . $title . '</h5>';
+            }
+            if (!empty($link)) {
+                echo '</a>';
             }
         }
 

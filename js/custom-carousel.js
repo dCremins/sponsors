@@ -1,14 +1,8 @@
 jQuery(function ($) {
-    $('#SponsorLevelIndicators').on('slide.bs.carousel', function () {
-        $('.carousel-indicators li').each(function () {
-            if ($(this).hasClass('active')) {
-              $($(this).next('li')).addClass('brand');
-              $($(this).next('li')).removeClass('accent');
-              $($(this)).addClass('accent');
-              $($(this)).removeClass('brand');
-            }
-
-            //$('li').addClass('test');
-        });
+    $('#SponsorLevelIndicators').on('slid.bs.carousel', function () {
+        $('li.brand').addClass('accent');
+        $('li.brand').removeClass('brand');
+        $('li.active').removeClass('accent');
+        $('li.active').addClass('brand')
     });
 });
