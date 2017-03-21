@@ -98,35 +98,42 @@ class SponsorWidget extends \WP_Widget
         $count = 0;
 
         echo '<div id="SponsorLevelIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-        <ol class="carousel-indicators">';
+        <header id="widget_title" class="sr-only">Carousel of sponsor logos sorted by contributor level</header>
+        <p id="widget_desc" class="sr-only">A carousel is a rotating set of images, rotation stops on keyboard focus on carousel tab controls
+        or hovering the mouse pointer over images. Use the tabs or the previous and next buttons to change the displayed slide.</p>
+        <ol class="carousel-indicators" role="tablist">';
         foreach ($sponsors as $level => $single) {
             if ($count == 0) {
-                echo '<li data-target="#SponsorLevelIndicators" data-slide-to="0" class="brand background active"></li>';
+                echo '<li data-target="#SponsorLevelIndicators" data-slide-to="0" class="brand background active">
+                <span class="sr-only">Slide 1: ' . $level . ' Level Sponsor Logos</span>
+                </li>';
                 $count += 1;
             } else {
-                echo '<li class="accent background" data-target="#SponsorLevelIndicators" data-slide-to="' . $count . '"></li>';
+                echo '<li class="accent background" data-target="#SponsorLevelIndicators" data-slide-to="' . $count . '">
+                <span class="sr-only">Slide ' . ($count + 1) . ': ' . $level . ' Level Sponsor Logos</span>
+                </li>';
                 $count += 1;
             }
         }
         echo '</ol>
-        <div class="carousel-inner" role="listbox">';
+        <div class="carousel-inner">';
 
         $count = 0;
         $Lcount = 0;
 
         foreach ($sponsors as $level => $single) {
             if ($Lcount == 0) {
-                echo '<div class="carousel-item active">';
+                echo '<div class="carousel-item active" role"tabpanel" id="tabpanel-0-0" aria-labelledby="tab-0-0">';
                 $Lcount += 1;
             } else {
-                echo '<div class="carousel-item">';
+                echo '<div class="carousel-item" role="tabpanel" id="tabpanel-0-' . $Lcount . '" aria-labelledby="tab-0-' . $Lcount . '">';
             }
             echo '<div class="container contributor sponsor-widget">';
             echo '<header class="contributor-level">
                   <span class="fa-stack fa-3x">
-                  <i class="fa fa-circle fa-inverse contributor-title-circle"></i>
-                  <i class="brand color fa fa-circle fa-stack-2x"></i>
-                  <span class="sponsor-level-icon dashicons dashicons-awards fa-stack-1x fa-inverse"></span>
+                  <i aria-hidden="true" class="fa fa-circle fa-inverse contributor-title-circle"></i>
+                  <i aria-hidden="true" class="brand color fa fa-circle fa-stack-2x"></i>
+                  <span aria-hidden="true" class="sponsor-level-icon dashicons dashicons-awards fa-stack-1x fa-inverse"></span>
                   </span>
                   <h2 class="accent background inverse">' . $level . '</h2>
                   </header>';
