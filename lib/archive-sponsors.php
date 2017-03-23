@@ -6,31 +6,47 @@
 
 $sponsors = [];
 
+$levels = get_field_object('field_58c6afe5cac2a');
+if ($levels) {
+    foreach ($levels['choices'] as $k => $v) {
+        $sponsors[$v] = [];
+    }
+}
+
+$query = new WP_Query([
+ 'post_type'       => 'sponsors',
+ 'post_status'     => 'publish',
+ 'posts_per_page'  => 10000,
+ 'order'           => 'ASC'
+]);
+
 echo '<h1>Sponsors</h1>';
 echo '<p>ICOET is grateful for the generous contributions, volunteer efforts and ongoing support of these organizations and their staff.</p>
 <p>To add your organization as a sponsor, go to <a href="/sponsor-registration">Sponsor/Exhibitor Registration.</a></p>';
 
-while (have_posts()) :
-    the_post();
-    if (get_field('type') == 'Logo') {
-        $logo_array = get_field('logo');
-        $logo = $logo_array['url'];
-    } elseif (get_field('type') == 'Text') {
-        $logo = get_field('text');
-    } else {
-        $logo = '';
-    }
-    $sponsors[get_field('contributor_level')][get_the_title()] =  [
-        'type' => get_field('type'),
-        'logo' => $logo,
-        'link' => get_field('link')
-    ];
-    if (get_field('custom_width')) {
-        $sponsors[get_field('contributor_level')][get_the_title()]['width'] = get_field('custom_width');
-    } else {
-        $sponsors[get_field('contributor_level')][get_the_title()]['width'] = 'auto';
-    }
-endwhile;
+if ($query->have_posts()) {
+    while ($query->have_posts()) :
+        $query->the_post();
+        if (get_field('type') == 'Logo') {
+            $logo_array = get_field('logo');
+            $logo = $logo_array['url'];
+        } elseif (get_field('type') == 'Text') {
+            $logo = get_field('text');
+        } else {
+            $logo = '';
+        }
+        $sponsors[get_field('contributor_level')][get_the_title()] =  [
+            'type' => get_field('type'),
+            'logo' => $logo,
+            'link' => get_field('link')
+        ];
+        if (get_field('custom_width')) {
+            $sponsors[get_field('contributor_level')][get_the_title()]['width'] = get_field('custom_width');
+        } else {
+            $sponsors[get_field('contributor_level')][get_the_title()]['width'] = 'auto';
+        }
+    endwhile;
+}
 
 $count = 0;
 
