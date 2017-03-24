@@ -132,7 +132,7 @@ class SponsorWidget extends \WP_Widget
         foreach ($sponsors as $level => $single) {
             if (!empty($single)) {
                 if ($Lcount == 0) {
-                    echo '<div class="carousel-item active" role"tabpanel" id="tabpanel-0-0" aria-labelledby="tab-0-0">';
+                    echo '<div class="carousel-item active" role="tabpanel" id="tabpanel-0-0" aria-labelledby="tab-0-0">';
                     $Lcount += 1;
                 } else {
                     echo '<div class="carousel-item" role="tabpanel" id="tabpanel-0-' . $Lcount . '" aria-labelledby="tab-0-' . $Lcount . '">';
