@@ -66,6 +66,12 @@ class SponsorWidget extends \WP_Widget
         }
 
         $sponsors = [];
+        $levels = get_field_object('field_58c6afe5cac2a');
+        if ($levels) {
+            foreach ($levels['choices'] as $k => $v) {
+                $sponsors[$v] = [];
+            }
+        }
         $the_query = new \WP_Query(array(
         'post_type'         => 'sponsors',
         'posts_per_page'    => -1
@@ -103,16 +109,18 @@ class SponsorWidget extends \WP_Widget
         or hovering the mouse pointer over images. Use the tabs or the previous and next buttons to change the displayed slide.</p>
         <ol class="carousel-indicators" role="tablist">';
         foreach ($sponsors as $level => $single) {
-            if ($count == 0) {
-                echo '<li data-target="#SponsorLevelIndicators" data-slide-to="0" class="brand background active">
-                <span class="sr-only">Slide 1: ' . $level . ' Level Sponsor Logos</span>
-                </li>';
-                $count += 1;
-            } else {
-                echo '<li class="accent background" data-target="#SponsorLevelIndicators" data-slide-to="' . $count . '">
-                <span class="sr-only">Slide ' . ($count + 1) . ': ' . $level . ' Level Sponsor Logos</span>
-                </li>';
-                $count += 1;
+            if (!empty($single)) {
+                if ($count == 0) {
+                    echo '<li data-target="#SponsorLevelIndicators" data-slide-to="0" class="brand background active">
+                    <span class="sr-only">Slide 1: ' . $level . ' Level Sponsor Logos</span>
+                    </li>';
+                    $count += 1;
+                } else {
+                    echo '<li class="accent background" data-target="#SponsorLevelIndicators" data-slide-to="' . $count . '">
+                    <span class="sr-only">Slide ' . ($count + 1) . ': ' . $level . ' Level Sponsor Logos</span>
+                    </li>';
+                    $count += 1;
+                }
             }
         }
         echo '</ol>
@@ -122,45 +130,47 @@ class SponsorWidget extends \WP_Widget
         $Lcount = 0;
 
         foreach ($sponsors as $level => $single) {
-            if ($Lcount == 0) {
-                echo '<div class="carousel-item active" role"tabpanel" id="tabpanel-0-0" aria-labelledby="tab-0-0">';
-                $Lcount += 1;
-            } else {
-                echo '<div class="carousel-item" role="tabpanel" id="tabpanel-0-' . $Lcount . '" aria-labelledby="tab-0-' . $Lcount . '">';
-            }
-            echo '<div class="container contributor sponsor-widget">';
-            echo '<header class="contributor-level">
-                  <span class="fa-stack fa-3x">
-                  <i aria-hidden="true" class="fa fa-circle fa-inverse contributor-title-circle"></i>
-                  <i aria-hidden="true" class="brand color fa fa-circle fa-stack-2x"></i>
-                  <span aria-hidden="true" class="sponsor-level-icon dashicons dashicons-awards fa-stack-1x fa-inverse"></span>
-                  </span>
-                  <h2 class="accent background inverse">' . $level . '</h2>
-                  </header>';
-            echo '<div class="row level">';
+            if (!empty($single)) {
+                if ($Lcount == 0) {
+                    echo '<div class="carousel-item active" role"tabpanel" id="tabpanel-0-0" aria-labelledby="tab-0-0">';
+                    $Lcount += 1;
+                } else {
+                    echo '<div class="carousel-item" role="tabpanel" id="tabpanel-0-' . $Lcount . '" aria-labelledby="tab-0-' . $Lcount . '">';
+                }
+                echo '<div class="container contributor sponsor-widget">';
+                echo '<header class="contributor-level">
+                      <span class="fa-stack fa-3x">
+                      <i aria-hidden="true" class="fa fa-circle fa-inverse contributor-title-circle"></i>
+                      <i aria-hidden="true" class="brand color fa fa-circle fa-stack-2x"></i>
+                      <span aria-hidden="true" class="sponsor-level-icon dashicons dashicons-awards fa-stack-1x fa-inverse"></span>
+                      </span>
+                      <h2 class="accent background inverse">' . $level . '</h2>
+                      </header>';
+                echo '<div class="row level">';
 
-            foreach ($single as $title => $sponsor) {
-                if ($count == 4) {
-                    echo '</div>
-                    <div class="row level">';
-                    $count = 0;
-                }
-                echo '<div class="col">';
-                if ($sponsor['type'] == 'Logo') {
-                    echo '<div class="sponsor-logo" style="width:' . $sponsor['width'] . 'px;">';
-                    echo '<a href="' . $sponsor['link'] . '">';
-                    echo '<img src="' . $sponsor['logo'] . '" alt="' . $title . '">';
-                    echo '</a>';
+                foreach ($single as $title => $sponsor) {
+                    if ($count == 4) {
+                        echo '</div>
+                        <div class="row level">';
+                        $count = 0;
+                    }
+                    echo '<div class="col">';
+                    if ($sponsor['type'] == 'Logo') {
+                        echo '<div class="sponsor-logo" style="width:' . $sponsor['width'] . 'px;">';
+                        echo '<a href="' . $sponsor['link'] . '">';
+                        echo '<img src="' . $sponsor['logo'] . '" alt="' . $title . '">';
+                        echo '</a>';
+                        echo '</div>';
+                    } elseif ($sponsor['type'] == 'Text') {
+                        echo '<a href="' . $sponsor['link'] . '">';
+                        echo '<h3>' . $title . '</h3>';
+                        echo '</a>';
+                    }
                     echo '</div>';
-                } elseif ($sponsor['type'] == 'Text') {
-                    echo '<a href="' . $sponsor['link'] . '">';
-                    echo '<h3>' . $title . '</h3>';
-                    echo '</a>';
+                    $count += 1;
                 }
-                echo '</div>';
-                $count += 1;
+                echo '</div></div></div>';
             }
-            echo '</div></div></div>';
         }
         echo '</div>';
         echo '
