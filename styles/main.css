@@ -36,6 +36,7 @@
 }
 
 .sponsor-level-icon,
+.sponsor-level-icon.dashicons,
 .sponsor-level-icon.fa {
   font-size: 70px;
 }

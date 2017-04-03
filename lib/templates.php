@@ -16,7 +16,7 @@ function include_template_function($template_path)
                 return $theme_file;
             }
             return plugin_dir_path(dirname(__FILE__)) . '/lib/single-sponsor.php';
-        } else {
+        } elseif (is_archive()) {
             // checks if the file exists in the theme first,
             // otherwise serve the file from the plugin
             if ($theme_file = locate_template(array ('archive-sponsors.php'))) {
