@@ -3,45 +3,12 @@
     "title": "Sponsors",
     "fields": [
         {
-            "key": "field_58c6b061cac2b",
-            "label": "Type",
-            "name": "type",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Logo": "Logo",
-                "Text": "Text"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "Logo",
-            "layout": "horizontal",
-            "return_format": "value"
-        },
-        {
             "key": "field_58c6b08fcac2c",
             "label": "Logo",
             "name": "logo",
             "type": "image",
             "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58c6b061cac2b",
-                        "operator": "==",
-                        "value": "Logo"
-                    }
-                ]
-            ],
+            "required": 1,
             "wrapper": {
                 "width": "40",
                 "class": "",
@@ -57,33 +24,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_58c6b0a5cac2d",
-            "label": "Text",
-            "name": "text",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58c6b061cac2b",
-                        "operator": "==",
-                        "value": "Text"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "40",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         },
         {
             "key": "field_58c6afe5cac2a",
@@ -131,25 +71,6 @@
             },
             "default_value": "",
             "placeholder": ""
-        },
-        {
-            "key": "field_58c6d6a3585f9",
-            "label": "Custom Width",
-            "name": "custom_width",
-            "type": "text",
-            "instructions": "(optional)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "px",
-            "maxlength": ""
         }
     ],
     "location": [

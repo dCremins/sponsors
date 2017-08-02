@@ -1,15 +1,24 @@
 .sponsor-logo {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  margin: 20px;
   max-width: 200px;
   min-width: 100px;
 }
 
+.sponsor-logo a {
+  display: block;
+}
+
 .sponsor-logo img {
-  width: 100%;
+  max-height: 100px;
+  max-width: 200px;
+  width: auto;
 }
 
 .contributor-level {
   display: flex;
-  margin: 30px 0;
 }
 
 .contributor-level h2 {
@@ -26,13 +35,11 @@
   top: -24px;
 }
 
-.contributor {
-  margin-bottom: 60px;
-}
 
 .contributor .level {
+  display: flex;
   flex-flow: row wrap;
-  padding: 0 30px 0 130px;
+  justify-content: center;
 }
 
 .sponsor-level-icon,
@@ -41,29 +48,14 @@
   font-size: 70px;
 }
 
-@media (max-width: 991px) {
-  .contributor .level {
-    display: flex;
-    padding: 0 30px;
-  }
-  .contributor .level .col {
-    width: 50%;
-  }
-}
-
-@media (max-width: 767px) {
-  .contributor .level {
-    display: block;
-  }
-  .contributor .level .col {
-    width: 100%;
-  }
-}
-
 .carousel .carousel-inner {
   margin: auto;
-  min-height: 400px;
+  min-height: 270px;
   width: 90%;
+}
+
+.contributor.sponsor-widget {
+  width: 100%;
 }
 
 .carousel .carousel-control-next,

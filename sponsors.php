@@ -4,7 +4,7 @@ Plugin Name: ICOET Sponsors
 GitHub Plugin URI: https://github.com/dcremins/sponsors
 GitHub Branch: master
 Description: Custom Sponsors Post Type and Views for ICOET website use
-Version: 0.3.7
+Version: 0.4.0
 Author: Devin Cremins
 Author URI: http://octopusoddments.com
 */

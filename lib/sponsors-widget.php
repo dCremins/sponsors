@@ -79,31 +79,23 @@ class SponsorWidget extends \WP_Widget
         if ($the_query->have_posts()) :
             while ($the_query->have_posts()) :
                 $the_query->the_post();
-                if (get_field('type') == 'Logo') {
+                if (get_field('logo')) {
                     $logo_array = get_field('logo');
                     $logo = $logo_array['url'];
-                } elseif (get_field('type') == 'Text') {
-                    $logo = get_field('text');
                 } else {
                     $logo = '';
                 }
                 $sponsors[get_field('contributor_level')][get_the_title()] =  [
-                    'type' => get_field('type'),
                     'logo' => $logo,
                     'link' => get_field('link')
                 ];
-                if (get_field('custom_width')) {
-                    $sponsors[get_field('contributor_level')][get_the_title()]['width'] = get_field('custom_width');
-                } else {
-                    $sponsors[get_field('contributor_level')][get_the_title()]['width'] = 'auto';
-                }
             endwhile;
         endif;
 
 // Slider Indicators
         $count = 0;
 
-        echo '<div id="SponsorLevelIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+        echo '<div id="SponsorLevelIndicators" class="carousel slide" data-ride="carousel" data-interval="4000">
         <header id="widget_title" class="sr-only">Carousel of sponsor logos sorted by contributor level</header>
         <p id="widget_desc" class="sr-only">A carousel is a rotating set of images, rotation stops on keyboard focus on carousel tab controls
         or hovering the mouse pointer over images. Use the tabs or the previous and next buttons to change the displayed slide.</p>
@@ -137,7 +129,7 @@ class SponsorWidget extends \WP_Widget
                 } else {
                     echo '<div class="carousel-item" role="tabpanel" id="tabpanel-0-' . $Lcount . '" aria-labelledby="tab-0-' . $Lcount . '">';
                 }
-                echo '<div class="container contributor sponsor-widget">';
+                echo '<div class="contributor sponsor-widget">';
                 echo '<header class="contributor-level">
                       <span class="fa-stack fa-3x">
                       <i aria-hidden="true" class="fa fa-circle fa-inverse contributor-title-circle"></i>
@@ -146,27 +138,14 @@ class SponsorWidget extends \WP_Widget
                       </span>
                       <h2 class="accent background inverse">' . $level . '</h2>
                       </header>';
-                echo '<div class="row level">';
+                echo '<div class="level">';
 
                 foreach ($single as $title => $sponsor) {
-                    if ($count == 4) {
-                        echo '</div>
-                        <div class="row level">';
-                        $count = 0;
-                    }
-                    echo '<div class="col">';
-                    if ($sponsor['type'] == 'Logo') {
-                        echo '<div class="sponsor-logo" style="width:' . $sponsor['width'] . 'px;">';
+                        echo '<div class="sponsor-logo">';
                         echo '<a href="' . $sponsor['link'] . '">';
                         echo '<img src="' . $sponsor['logo'] . '" alt="' . $title . '">';
                         echo '</a>';
                         echo '</div>';
-                    } elseif ($sponsor['type'] == 'Text') {
-                        echo '<a href="' . $sponsor['link'] . '">';
-                        echo '<h3>' . $title . '</h3>';
-                        echo '</a>';
-                    }
-                    echo '</div>';
                     $count += 1;
                 }
                 echo '</div></div></div>';
